@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
+    'Medical',  
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -75,10 +77,18 @@ WSGI_APPLICATION = 'first_django_app.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'Medical_Test',         
+        'USER': 'myuser',            
+        'PASSWORD': 'mypassword',    
+        'HOST': 'localhost',         
+        'PORT': '3306',              
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+        },
     }
 }
+
 
 
 # Password validation

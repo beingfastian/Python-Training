@@ -1,0 +1,33 @@
+{% extends 'patients/base.html' %}
+
+{% block content %}
+<div class="d-flex justify-content-between mb-3">
+    <h2>{{ title }}</h2>
+    <a href="{% url 'patient_list' %}" class="btn btn-secondary">Back</a>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <form method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label class="form-label">Name</label>
+                {{ form.name }}
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Email</label>
+                {{ form.email }}
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Phone</label>
+                {{ form.phone }}
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Address</label>
+                {{ form.address }}
+            </div>
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

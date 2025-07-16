@@ -1,0 +1,20 @@
+{% extends 'patients/base.html' %}
+
+{% block content %}
+<div class="d-flex justify-content-between mb-3">
+    <h2>Patient Details</h2>
+    <div>
+        <a href="{% url 'patient_edit' patient.id %}" class="btn btn-warning">Edit</a>
+        <a href="{% url 'patient_list' %}" class="btn btn-secondary">Back</a>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <p><strong>Name:</strong> {{ patient.name }}</p>
+        <p><strong>Email:</strong> {{ patient.email }}</p>
+        <p><strong>Phone:</strong> {{ patient.phone }}</p>
+        <p><strong>Address:</strong> {{ patient.address }}</p>
+    </div>
+</div>
+{% endblock %}
